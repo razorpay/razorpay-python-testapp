@@ -1,0 +1,2 @@
+flask
+razorpay==0.2.0

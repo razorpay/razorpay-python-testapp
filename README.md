@@ -2,9 +2,16 @@
 Sample App for Razorpay Python Integration
 
 # Steps for Integration
+
+1. pip install -r requirements.txt 
+2. python app.py
+
+OR
+
 1. pip install flask
 2. pip install razorpay==0.2.0
 3. python app.py
+
 
 If you are re-using this as your final code, please make sure you do the following:
 
