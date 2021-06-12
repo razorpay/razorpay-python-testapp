@@ -1,10 +1,15 @@
 <button id="rzp-button1">Pay with Razorpay</button>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<form action="charge" method="POST" name="razorpayform">
+    <input type="hidden" id="payment_id" name="razorpay_payment_id" />
+    <input type="hidden" id="amount" name="amount" />
+</form>
 <script>
     // Checkout details as a json
+    var amount = 5100;
     var options = {
-        'key': 'rzp_test_WyK93y9mvps7SN',
-        'amount': 5100,
+        'key': 'rzp_test_1DP5mmOlF5G5ag',
+        'amount': amount,
         "name": "DJ Tiesto",
         "description": "Tron Legacy",
         "image": "https://s29.postimg.org/r6dj1g85z/daft_punk.jpg",
@@ -26,8 +31,8 @@
      * https://docs.razorpay.com/docs/checkout-form#checkout-fields
      */
     options.handler = function (response) {
-        document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
-        document.getElementById('razorpay_signature').value = response.razorpay_signature;
+        document.getElementById('payment_id').value = response.razorpay_payment_id;
+        document.getElementById('amount').value = amount;
         document.razorpayform.submit();
     };
     // Boolean whether to show image inside a white frame. (default: true)
