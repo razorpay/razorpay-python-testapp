@@ -9,7 +9,7 @@
 <body>
     <button id="rzp-button1">Pay with Razorpay</button>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <form action="charge" method="POST" name="razorpayform">
+    <form action="charge" method="POST" name="razorpayForm">
         <input type="hidden" id="payment_id" name="razorpay_payment_id" />
         <input type="hidden" id="amount" name="amount" />
     </form>
@@ -42,7 +42,7 @@
         options.handler = function (response) {
             document.getElementById('payment_id').value = response.razorpay_payment_id;
             document.getElementById('amount').value = amount;
-            document.razorpayform.submit();
+            document.razorpayForm.submit();
         };
         // Boolean whether to show image inside a white frame. (default: true)
         options.theme.image_padding = false;
