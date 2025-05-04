@@ -7,7 +7,7 @@
         <script
             src="https://checkout.razorpay.com/v1/checkout.js"
             data-key="rzp_test_WyK93y9mvps7SN"
-            data-amount="5100"
+            data-amount="{{amount}}"
             data-name="Daft Punk"
             data-description="Purchase Description"
             data-image="vk.jpg"
@@ -16,6 +16,7 @@
             data-prefill.name="Harshil Mathur"
             data-prefill.email="harshil@razorpay.com"
             data-prefill.contact="9999999999"
+            data-order_id="{{order_id}}"
             data-notes.shopping_order_id="21">
         </script>
         <input type="hidden" name="shopping_order_id" value="21">
