@@ -1,0 +1,45 @@
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+  <!-- We may have changed the style of .razorpay_payment_button directly but the problem
+  of custom value or display text to the button remains unsolved, so making a new button solves that too.--->
+  <style>
+    .razorpay-payment-button{
+      display:none;
+    }
+   
+    #custom_payment_button{
+      color: white;
+      background: black;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 13px;
+      font-family: monospace;
+      box-shadow: 0px 6px 5px 1px grey;
+      font-size: 17px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+  <body>
+    <form action="charge" method="POST">
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_test_WyK93y9mvps7SN"
+            data-amount="5100"
+            data-name="Daft Punk"
+            data-description="Purchase Description"
+            data-image="vk.jpg"
+            data-netbanking="true"
+            data-description="Tron Legacy"
+            data-prefill.name="Harshil Mathur"
+            data-prefill.email="harshil@razorpay.com"
+            data-prefill.contact="9999999999"
+            data-notes.shopping_order_id="21">
+        </script>
+        <input type="hidden" name="shopping_order_id" value="21">
+    </form>
+    <!-- Customize the following button  -->
+    <input type="button" value="Pay" onclick="document.getElementsByClassName('razorpay-payment-button')[0].click()" id="custom_payment_button"/>
+</body>
+</html>
